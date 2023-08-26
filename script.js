@@ -21,22 +21,27 @@ function playRound(playerSelection, computerSelection){
 
     if( playerSelection == computerSelection){
         //tie
+        document.body.style.backgroundColor = 'grey';
         return "tie";
     } else if (playerSelection == "ROCK" && computerSelection == "SCISSORS"){
         //playerwin
         playerScore++
+        document.body.style.backgroundColor = 'green';
         return "player";
     } else if (playerSelection == "SCISSORS" && computerSelection == "PAPER"){
         //playerwin
         playerScore++
+        document.body.style.backgroundColor = 'green';
         return "player";
     } else if (playerSelection == "PAPER" && computerSelection == "ROCK"){
         //playerwin
         playerScore++
+        document.body.style.backgroundColor = 'green';
         return "player";
     } else {
         //computer win
         computerScore++
+        document.body.style.backgroundColor = 'red';
         return "computer";
     }
 }
@@ -44,31 +49,40 @@ function playRound(playerSelection, computerSelection){
 function gameOver(){
     return playerScore === 5 || computerScore === 5
 }
-
-const rockBtn = document.getElementById('rockbtn');
-const paperBtn = document.getElementById('paperbtn');
-const scissorsBtn = document.getElementById('scissorsbtn');
-
-rockBtn.onclick(handleClick('ROCK'))
-
-paperBtn.addEventListener('click', () => handleClick('PAPER'));
-scissorsBtn.addEventListener('click', () => handleClick('SCISSORS'));
-
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
-function game(){
-    let roundCount = 0;
-    while(roundCount < 5){
-        const playerSelection = document.querySelector(".playerOption")
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-        roundCount++;
+function restartGame(){
+    if( playerScore === 5){
+        alert("Game Over. You Won!")
+    } else {
+        alert("Game Over. You Lose!")
     }
+    document.body.style.backgroundColor = 'lightgrey';
+    playerScore = 0
+    computerScore = 0
+    p_score.textContent = `${playerScore}`
+    c_score.textContent = `${computerScore}`
 }
-game();
+
+const p_score = document.getElementById('playerScore')
+const c_score = document.getElementById('computerScore')
+
+
 function handleClick(playerSelection){
+    
+    if(gameOver()){
+        restartGame()
+        return
+    }
+
     console.log(playerSelection)
-    console.log(":)")
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection))
+    console.log(playerScore)
+    console.log(computerScore)
+    p_score.textContent = `${playerScore}`
+    c_score.textContent = `${computerScore}`
+    
+    if(gameOver()){
+        restartGame()
+        return
+    }
 }

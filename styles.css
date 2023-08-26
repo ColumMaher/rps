@@ -23,9 +23,20 @@ body{
     border-bottom: solid 4px black;
 }
 
+.score{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 100px;
+}
+
 h2{
     display: flex;
     justify-content: center;
+}
+
+p {
+    font-size: 40px;
+    font-weight: 300;
 }
 
 img {
@@ -34,6 +45,6 @@ img {
 }
 
 button{
-/*     border: none;
-    background-color: lightgrey; */
+    border: none;
+    background-color: lightgrey; 
 }

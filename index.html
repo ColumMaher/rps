@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
-    <script src="script.js"></script>
+    
 </head>
 <body>
     <div class="header">
@@ -16,12 +16,19 @@
             <div>
                 <h2>First to 5 wins</h2>
             </div>
+            <div class="score">
+                <p>Player Score: </p>
+                <p id="playerScore">0</p>
+                <p>Computer Score: </p>
+                <p id="computerScore">0</p>
+            </div>
             <div class="container-inner">
-                <button id="rockbtn"><img src="images/rocks.png" alt="Rock"></button>
-                <button id="paperbtn"><img src="images/file.png" alt="Paper"></button>
-                <button id="scissorsbtn"><img src="images/scissors.png" alt="scissors"></button>
+                <button id="rockbtn" onclick="handleClick('ROCK')"><img src="images/rocks.png" alt="Rock"></button>
+                <button id="paperbtn" onclick="handleClick('PAPER')"><img src="images/file.png" alt="Paper"></button>
+                <button id="scissorsbtn" onclick="handleClick('SCISSORS')"><img src="images/scissors.png" alt="scissors"></button>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
