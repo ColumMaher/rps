@@ -1,0 +1,39 @@
+body{
+    background-color: lightgrey;
+}
+
+.container-outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.container-inner{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 150px;
+    gap: 100px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 4px black;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 200px;
+    max-width: 200px;
+}
+
+button{
+/*     border: none;
+    background-color: lightgrey; */
+}

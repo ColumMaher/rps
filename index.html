@@ -3,48 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
-    <script>
-        function getComputerChoice(){
-            num = Math.floor(Math.random() * (2 - 0 + 1) + 0);
-            if(num == 0){
-                return "ROCK";
-            } else if( num == 1){
-                return "PAPER";
-            } else {
-                return "SCISSORS";
-            }
-        }
-        function playRound(playerSelection, computerSelection){
-            playerSelection = playerSelection.toUpperCase();
-
-            console.log("P: " + playerSelection);
-            console.log("C: " + computerSelection);
-
-            if( playerSelection == computerSelection){
-                //tie
-                return "tie";
-            } else if (playerSelection == "ROCK" && computerSelection == "SCISSORS"){
-                //playerwin
-                return "playerwin";
-            } else if (playerSelection == "SCISSORS" && computerSelection == "PAPER"){
-                //playerwin
-                return "playerwin";
-            } else if (playerSelection == "PAPER" && computerSelection == "ROCK"){
-                //playerwin
-                return "playerwin";
-            } else {
-                //computer win
-                return "computer win";
-            }
-        }
-
-        const playerSelection = "rock";
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-    </script>
+    <script src="script.js"></script>
 </head>
 <body>
-    
+    <div class="header">
+        <h1>ROCK, PAPER, SCISSORS</h1>
+    </div>
+    <div class="container-outer">
+        <div>
+            <div>
+                <h2>First to 5 wins</h2>
+            </div>
+            <div class="container-inner">
+                <button id="rockbtn"><img src="images/rocks.png" alt="Rock"></button>
+                <button id="paperbtn"><img src="images/file.png" alt="Paper"></button>
+                <button id="scissorsbtn"><img src="images/scissors.png" alt="scissors"></button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
